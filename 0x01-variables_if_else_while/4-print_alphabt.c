@@ -8,13 +8,17 @@
  */
 int main(void)
 {
-	char l;
+	char low, e, q;
 
-	for (l = 'a'; l <= 'z'; l++)
-		putchar(l);
-		for (l = 'A'; l <= 'Z'; l++)
-			putchar(l);
-			putchar('\n');
+	e = 'e';
+	q = 'q';
+
+	for (low = 'a'; low <= 'z'; low++)
+	{
+		if (low != e && low != q)
+			putchar(low);
+	}
+	printf("\n");
 
 	return (0);
 }
