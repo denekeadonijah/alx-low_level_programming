@@ -21,7 +21,7 @@ int main(void)
 	else if (Length == 0)
 	printf("%s %d is %d and is 0\n", strings, num, Length);
 	else if (Length < 6)
-	printf("%s %d is %d and is less than 6 and not 0\n", string, num, Length);
+	printf("%s %d is %d and is less than 6 and not 0\n", strings, num, Length);
 
 	return (0);
 }
