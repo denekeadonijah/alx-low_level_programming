@@ -1,19 +1,19 @@
 #include "main.h"
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * main - entry block
+ * @void: no argument
+ * Return: 0
  */
 int main(void)
 {
-	char *sh = "_putchar";
+	char ermias[] = "_putchar";
 
-	while (*sh)
+	int c;
+
+	for (c = 0; c < 8; c++)
 	{
-		_putchar(*sh);
-		sh++;
+		_putchar(ermias[c]);
 	}
 	_putchar('\n');
-
 	return (0);
 }
