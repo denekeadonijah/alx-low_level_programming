@@ -1,24 +1,32 @@
 #include <stdio.h>
+
 /**
- * main - write a program that finds and prints the sum of
- * the even-valued terms, followed by a new line.
+ * main - main function
  *
- * Return: Always 0 (Success)
+ * Return: 0
  */
 int main(void)
 {
-	long int a = 1, b = 2, sum = 0, res = 2;
+	int counter = 2;
 
-	while (sum < 4000000)
+	float a = 1;
+	float b = a + 1;
+	float c = a + b;
+
+	printf("%.0f, ", a);
+	printf("%.0f, ", b);
+	while (counter < 98)
 	{
-		sum = a + b;
+		counter++;
+		printf("%.0f", c);
 		a = b;
-		b = sum;
-		if (sum % 2 == 0)
+		b = c;
+		c = a + b;
+		if (counter < 98)
 		{
-			res += sum;
+			printf(", ");
 		}
 	}
-	printf("%li\n", res);
+	printf("\n");
 	return (0);
 }
