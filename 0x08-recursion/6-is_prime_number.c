@@ -1,4 +1,4 @@
-nclude "main.h"
+#include "main.h"
 
 /**
  * prime_check - checks to see if number is prime
