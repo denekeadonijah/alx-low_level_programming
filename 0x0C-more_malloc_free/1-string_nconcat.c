@@ -1,31 +1,51 @@
-#include <stdlib.h>
 #include "main.h"
+
 /**
-  * _calloc - allocates memory of an array using malloc.
-  * @nmemb: number of elements in array.
-  * @size: size of elements of array.
-  *
-  * Return: NULL is size or nmemb == 0.
-  * NULL if malloc fails.
-  * Pointer to memory allocated if successful.
-  */
-void *_calloc(unsigned int nmemb, unsigned int size)
+ * string_nconcat - concatenates two strings.
+ * @s1: first string
+ * @s2: second string
+ * @n: index
+ * Return: char pointer
+ */
+
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	void *p;
-	unsigned int i;
+	char *p;
+	unsigned int size1 = 0, size2 = 0, i;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-	p = malloc(nmemb * size);
+	if (s1 == NULL)
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
+
+	while (s1[size1] != '\0')
+	{
+		size1++;
+	}
+
+	while (s2[size2] != '\0')
+	{
+		size2++;
+	}
+
+	if (n > size2)
+	n = size2;
+	p = malloc((size1 + n + 1) * sizeof(char));
+
 	if (p == NULL)
+		return (0);
+
+	for (i = 0; i < size1; i++)
 	{
-		return (NULL);
+		p[i] = s1[i];
 	}
 
-	for (i = 0; i < (nmemb * size); i++)
+	for (; i < (size1 + n); i++)
 	{
-		*((char *)(p) + i) = 0;
+		p[i] = s2[i - size1];
 	}
+	p[i] = '\0';
 
-	return (p);
+return (p);
 }
